@@ -5,44 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../../dist/output.css">
 
     <title>Mobile Off Canvas</title>
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-300 overflow-x-hidden">
     
-    <nav class="bg-gray-300 h-20 px-8 flex justify-between items-center">
-        <div class="text-4xl">
+    <nav class="md:px-8 bg-white px-6 h-20 flex justify-between items-center fixed w-full top-0">
+        <!--Logo-->
+        <div class="text-3xl">
             LOGO
         </div>
 
-        <div class="navLinks flex justify-between">
-            <div class="top flex gap-6">
-                <!--LINK-->
-                <a href="#" class="text-xl text-gray-950">
+        <!--burgerIcon-->
+        <i id="burgerIcon" class="ri-menu-line text-3xl md:hidden px-4 py-1 border-[1px] border-gray-300 rounded-lg"></i>
+
+        <div class="navLinks md:flex md:bg-transparent md:w-auto md:shadow-none md:static md:h-full md:flex-row md:translate-x-0 bg-white text-center flex justify-between flex-col w-3/4 gap-6 absolute right-[-100%] top-0 h-screen shadow-xl duration-500">
+            <div class="top md:flex items-center gap-6 block">
+
+                <span class="p-4 flex justify-start">
+                    <i id="closeButton" class="ri-close-line text-4xl md:hidden"></i>
+                </span>
+
+                <!--Link-->
+                <a href="#" class="md:p-0 md:border-0 py-4 text-xl text-gray-950 block border-b-[1px] border-gray-200 hover:text-blue-500">
                     Documentação
                 </a>
 
-                <!--LINK-->
-                <a href="#" class="text-xl text-gray-950">
+                <!--Link-->
+                <a href="#" class="md:p-0 md:border-0 py-4 text-xl text-gray-950 block border-b-[1px] border-gray-200 hover:text-blue-500">
                     Contato
                 </a>
 
-                <!--LINK-->
-                <a href="#" class="text-xl text-gray-950">
+                <!--Link-->
+                <a href="#" class="md:p-0 md:border-0 py-4 text-xl text-gray-950 block border-b-[1px] border-gray-200 hover:text-blue-500">
                     Sobre
                 </a>
             </div>
 
-            <div class="bottom">
-                <!--LINK-->
-                <a href="#" class="bg-blue-500 text-white text-xl px-4 py-2 rounded hover:bg-blue-600">
+            <div class="bottom md:p-0 md:flex md:items-center p-4">
+                <!--Link-->
+                <a href="#" class="bg-blue-500 text-white block text-xl px-4 py-2 rounded hover:bg-blue-600">
                     Começar
                 </a>
             </div>
         </div>
     </nav>
 
+    <script>
+        let menu = document.querySelector('.navLinks');
+
+        document.getElementById('burgerIcon').addEventListener('click', function() {
+            menu.classList.remove('right-[-100%]');
+            menu.classList.add('right-0');
+        });
+
+        document.getElementById('closeButton').addEventListener('click', function() {
+            menu.classList.remove('right-0');
+            menu.classList.add('right-[-100%]');
+        });
+    </script>
 </body>
 </html>
