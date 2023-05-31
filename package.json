@@ -1,0 +1,15 @@
+{
+  "name": "tailwindcss-componentes",
+  "version": "1.0.0",
+  "description": "Off-canvas menu, dropdown, modal e etc... utilizando a biblioteca Tailwind CSS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
