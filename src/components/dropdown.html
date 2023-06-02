@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../dist/output.css">
+
+    <title>Dropdown</title>
+</head>
+<body class="bg-gray-300">
+    
+    <nav class="bg-white px-6 h-20 flex items-center">
+        <div class="dropdown relative">
+            <button class="bg-blue-500 px-4 py-2 text-white text-lg rounded-md flex items-center relative hover:bg-blue-600">
+                Dropdown
+                <i class="ri-arrow-down-s-line text-white text-lg pl-2"></i>
+            </button>
+
+            <div class="dropdownContent bg-gray-200 text-gray-900 text-md w-[160px] rounded-md shadow-lg absolute top-[45px]">
+                <a href="#" class="block p-2 rounded-t-md hover:bg-gray-300">link1</a>
+                <a href="#" class="block p-2 hover:bg-gray-300">link2</a>
+                <a href="#" class="block p-2 hover:bg-gray-300">link3</a>
+                <a href="#" class="block p-2 rounded-b-md hover:bg-gray-300">link4</a>
+            </div>
+        </div>
+
+        <div class="dropdown"></div>
+    </nav>
+
+    <script>
+
+    </script>
+</body>
+</html>
