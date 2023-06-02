@@ -13,26 +13,49 @@
 </head>
 <body class="bg-gray-300">
     
-    <nav class="bg-white px-6 h-20 flex items-center">
+    <nav class="bg-white px-6 h-20 flex items-center justify-between">
         <div class="dropdown relative">
-            <button class="bg-blue-500 px-4 py-2 text-white text-lg rounded-md flex items-center relative hover:bg-blue-600">
-                Dropdown
-                <i class="ri-arrow-down-s-line text-white text-lg pl-2"></i>
+            <button class="dropdownButton bg-blue-500 px-4 py-2 text-white text-lg rounded-md flex items-center relative hover:bg-blue-600">
+                <span class="pr-2">Dropdown</span>
+                <i class="dropdownIcon ri-arrow-down-s-line text-white text-lg duration-200"></i>
             </button>
 
-            <div class="dropdownContent bg-gray-200 text-gray-900 text-md w-[160px] rounded-md shadow-lg absolute top-[45px]">
-                <a href="#" class="block p-2 rounded-t-md hover:bg-gray-300">link1</a>
-                <a href="#" class="block p-2 hover:bg-gray-300">link2</a>
-                <a href="#" class="block p-2 hover:bg-gray-300">link3</a>
-                <a href="#" class="block p-2 rounded-b-md hover:bg-gray-300">link4</a>
+            <div class="dropdownContent bg-white w-40 text-gray-900 text-md rounded-md shadow-lg absolute top-[48px] hidden">
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link1</a>
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link2</a>
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link3</a>
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link4</a>
             </div>
         </div>
 
-        <div class="dropdown"></div>
+        <div class="dropdownHover group relative">
+            <button class="dropdownHoverButton bg-blue-500 px-4 py-2 text-white text-lg rounded-md flex items-center relative hover:bg-blue-600">
+                <span class="pr-2">Dropdown</span>
+                <i class="dropdownHoverIcon ri-arrow-down-s-line text-white text-lg duration-200 group-hover:rotate-180"></i>
+            </button>
+
+            <div class="dropdownHoverContent bg-white w-40 text-gray-900 text-md rounded-md shadow-lg absolute top-[48px] hidden group-hover:block">
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link1</a>
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link2</a>
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link3</a>
+                <a href="#" class="block p-2 hover:bg-gray-200 rounded-md">link4</a>
+            </div>
+        </div>
     </nav>
 
     <script>
+        document.querySelector('.dropdownButton').addEventListener('click', function() {
+            const dropdownContent = document.querySelector('.dropdownContent');
 
+            dropdownContent.classList.toggle('block');
+            dropdownContent.classList.toggle('hidden');
+
+            if(dropdownContent.classList.contains('block')) {
+                document.querySelector('.dropdownIcon').classList.add('rotate-180');
+            } else {
+                document.querySelector('.dropdownIcon').classList.remove('rotate-180');
+            }
+        });
     </script>
 </body>
 </html>
