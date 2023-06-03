@@ -13,34 +13,48 @@
 </head>
 <body class="bg-gray-300 h-screen flex justify-center items-center">
     
-    <form class="bg-white p-6 rounded-md space-y-10 shadow-lg">
-        <div class="inputBox relative">
-            <input id="input" type="text" placeholder="Nome de usuário" class="p-1 pl-8 border-[1px] border-gray-400 rounded-sm outline-none focus:ring-2 focus:ring-blue-300">
-            <i id="teste" class="ri-user-line absolute text-gray-400 text-lg top-[4px] left-2"></i>
-        </div>
+    <form class="bg-white p-6 rounded-md shadow-lg space-y-10">
+            <div class="inputBox relative">
+                <input type="text" placeholder="Nome de usuário" class="p-3 pl-11 w-80 border-[1px] border-gray-400 rounded-full outline-none focus:ring-2 focus:ring-blue-300">
+                <i class="inputIcon ri-user-line absolute text-gray-400 text-2xl top-2.5 left-[14px]"></i>
+            </div>
 
-        <div class="inputBox relative">
-            <input type="email"placeholder="insira seu email" class="p-1 pl-8 border-[1px] border-gray-400 rounded-sm outline-none focus:ring-2 focus:ring-blue-300">
-            <i class="ri-mail-line absolute text-gray-400 text-lg top-[4px] left-2"></i>
-        </div>
+            <div class="inputBox relative">
+                <input type="email"placeholder="insira seu email" class="p-3 pl-11 w-80 border-[1px] border-gray-400 rounded-full outline-none focus:ring-2 focus:ring-blue-300">
+                <i class="inputIcon ri-mail-line absolute text-gray-400 text-2xl top-2.5 left-[14px]"></i>
+            </div>
 
-        <div class="inputBox relative">
-            <input type="password" placeholder="Insira sua senha" class="p-1 pl-8 border-[1px] border-gray-400 rounded-sm outline-none focus:ring-2 focus:ring-blue-300">
-            <i class="ri-lock-line absolute text-gray-400 text-lg top-[4px] left-2"></i>
-        </div>
+            <div class="inputBox relative">
+                <input type="password" placeholder="Insira sua senha" class="p-3 pl-11 w-80 border-[1px] border-gray-400 rounded-full outline-none focus:ring-2 focus:ring-blue-300">
+                <i class="inputIcon ri-lock-line absolute text-gray-400 text-2xl top-2 left-[14px]"></i>
+            </div>
 
+            <div>
+                <input id="checkbox" type="checkbox">
+                <label for="checkbox">Lembrar minha senha.</label>
+            </div>
+        
         <button class="px-4 py-2 text-white font-semibold bg-blue-500 rounded-sm hover:bg-blue-600">CADASTRAR-SE</button>
     </form>
 
     <script>
-        document.getElementById('input').addEventListener('focus', function() {
-            document.getElementById('teste').classList.remove('text-gray-400');
-            document.getElementById('teste').classList.add('text-blue-500');
-        });
+        document.querySelectorAll('.inputBox').forEach(function(input) {
+            const campo = input.querySelector('input');
+            const icone = input.querySelector('.inputIcon');
 
-        document.getElementById('input').addEventListener('blur', function() {
-            document.getElementById('teste').classList.remove('text-blue-500');
-            document.getElementById('teste').classList.add('text-gray-400');
+            campo.addEventListener('focus', function() {
+                if(icone.classList.contains('text-gray-400')) {
+                    icone.classList.remove('text-gray-400');
+                    icone.classList.add('text-blue-500');
+                }
+            });
+
+            campo.addEventListener('blur', function() {
+                if(icone.classList.contains('text-blue-500')) {
+                    icone.classList.remove('text-blue-500');
+                    icone.classList.add('text-gray-400');
+                }
+            });
         });
     </script>
 </body>
