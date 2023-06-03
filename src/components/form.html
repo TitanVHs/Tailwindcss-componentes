@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../dist/output.css">
+
+    <title>Form</title>
+</head>
+<body class="bg-gray-300 h-screen flex justify-center items-center">
+    
+    <form class="bg-white p-6 rounded-md space-y-10 shadow-lg">
+        <div class="inputBox relative">
+            <input id="input" type="text" placeholder="Nome de usuário" class="p-1 pl-8 border-[1px] border-gray-400 rounded-sm outline-none focus:ring-2 focus:ring-blue-300">
+            <i id="teste" class="ri-user-line absolute text-gray-400 text-lg top-[4px] left-2"></i>
+        </div>
+
+        <div class="inputBox relative">
+            <input type="email"placeholder="insira seu email" class="p-1 pl-8 border-[1px] border-gray-400 rounded-sm outline-none focus:ring-2 focus:ring-blue-300">
+            <i class="ri-mail-line absolute text-gray-400 text-lg top-[4px] left-2"></i>
+        </div>
+
+        <div class="inputBox relative">
+            <input type="password" placeholder="Insira sua senha" class="p-1 pl-8 border-[1px] border-gray-400 rounded-sm outline-none focus:ring-2 focus:ring-blue-300">
+            <i class="ri-lock-line absolute text-gray-400 text-lg top-[4px] left-2"></i>
+        </div>
+
+        <button class="px-4 py-2 text-white font-semibold bg-blue-500 rounded-sm hover:bg-blue-600">CADASTRAR-SE</button>
+    </form>
+
+    <script>
+        document.getElementById('input').addEventListener('focus', function() {
+            document.getElementById('teste').classList.remove('text-gray-400');
+            document.getElementById('teste').classList.add('text-blue-500');
+        });
+
+        document.getElementById('input').addEventListener('blur', function() {
+            document.getElementById('teste').classList.remove('text-blue-500');
+            document.getElementById('teste').classList.add('text-gray-400');
+        });
+    </script>
+</body>
+</html>
