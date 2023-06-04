@@ -15,18 +15,24 @@
     
     <form class="bg-white p-6 rounded-md shadow-lg space-y-10">
             <div class="inputBox relative">
-                <input type="text" placeholder="Nome de usuário" class="p-3 pl-11 w-80 border-[1px] border-gray-400 rounded-full outline-none focus:ring-2 focus:ring-blue-300">
-                <i class="inputIcon ri-user-line absolute text-gray-400 text-2xl top-2.5 left-[14px]"></i>
+                <input id="user" type="text" placeholder="Nome de usuário" class="peer placeholder-transparent text-lg p-3 w-80 border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
+                <label for="user" class="absolute bg-white text-blue-500 font-semibold text-md top-[-14px] left-3 cursor-text peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[13px] peer-placeholder-shown:left-[13px] duration-100">
+                    Nome de usuário
+                </label>
             </div>
 
             <div class="inputBox relative">
-                <input type="email"placeholder="insira seu email" class="p-3 pl-11 w-80 border-[1px] border-gray-400 rounded-full outline-none focus:ring-2 focus:ring-blue-300">
-                <i class="inputIcon ri-mail-line absolute text-gray-400 text-2xl top-2.5 left-[14px]"></i>
+                <input id="email" type="email" placeholder="Insira seu email" class="peer placeholder-transparent text-lg p-3 w-80 border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
+                <label for="email" class="absolute bg-white text-blue-500 font-semibold text-md top-[-14px] left-3 cursor-text peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[13px] peer-placeholder-shown:left-[13px] duration-100">
+                    Insira seu email
+                </label>
             </div>
 
             <div class="inputBox relative">
-                <input type="password" placeholder="Insira sua senha" class="p-3 pl-11 w-80 border-[1px] border-gray-400 rounded-full outline-none focus:ring-2 focus:ring-blue-300">
-                <i class="inputIcon ri-lock-line absolute text-gray-400 text-2xl top-2 left-[14px]"></i>
+                <input id="password" type="password" placeholder="Insira sua senha" class="peer placeholder-transparent text-lg p-3 w-80 border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
+                <label for="password" class="absolute bg-white text-blue-500 font-semibold text-md top-[-14px] left-3 cursor-text peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-[13px] peer-placeholder-shown:left-[13px] duration-100">
+                    Insira sua senha
+                </label>
             </div>
 
             <div>
@@ -34,28 +40,9 @@
                 <label for="checkbox">Lembrar minha senha.</label>
             </div>
         
-        <button class="px-4 py-2 text-white font-semibold bg-blue-500 rounded-sm hover:bg-blue-600">CADASTRAR-SE</button>
+        <button class="px-4 py-2 text-white font-semibold bg-blue-500 rounded-md hover:bg-blue-600">CADASTRAR-SE</button>
     </form>
 
-    <script>
-        document.querySelectorAll('.inputBox').forEach(function(input) {
-            const campo = input.querySelector('input');
-            const icone = input.querySelector('.inputIcon');
-
-            campo.addEventListener('focus', function() {
-                if(icone.classList.contains('text-gray-400')) {
-                    icone.classList.remove('text-gray-400');
-                    icone.classList.add('text-blue-500');
-                }
-            });
-
-            campo.addEventListener('blur', function() {
-                if(icone.classList.contains('text-blue-500')) {
-                    icone.classList.remove('text-blue-500');
-                    icone.classList.add('text-gray-400');
-                }
-            });
-        });
-    </script>
+    <script></script>
 </body>
 </html>
