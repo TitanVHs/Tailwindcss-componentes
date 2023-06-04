@@ -13,36 +13,56 @@
 </head>
 <body class="bg-gray-300 h-screen flex justify-center items-center">
     
-    <form class="bg-white p-6 rounded-md shadow-lg space-y-10">
-            <div class="inputBox relative">
-                <input id="user" type="text" placeholder="Nome de usuário" class="peer placeholder-transparent text-lg p-3 w-80 border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
-                <label for="user" class="absolute px-1 bg-white text-gray-400 font-semibold text-sm top-[-12px] left-3 cursor-text peer-focus:text-sm peer-focus:font-semibold peer-focus:bg-white peer-focus:text-blue-500 peer-focus:top-[-12px] peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal duration-150">
-                    Nome de usuário
-                </label>
-            </div>
+    <form class="md:h-auto md:w-auto bg-white p-8 rounded-md shadow-lg space-y-10 h-screen w-screen">
+        <div>
+            <h1 class="text-4xl text-gray-900 font-bold">Login</h1>
+            <span class="mt-2">
+                Não tem conta?
+                <a href="#" class="text-blue-500 hover:text-blue-600">Cadastre-se</a>
+            </span>
+        </div>
 
-            <div class="inputBox relative">
-                <input id="email" type="email" placeholder="Insira seu email" class="peer placeholder-transparent text-lg p-3 w-80 border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
-                <label for="email" class="absolute px-1 bg-white text-gray-400 font-semibold text-sm top-[-12px] left-3 cursor-text peer-focus:text-sm peer-focus:font-semibold peer-focus:bg-white peer-focus:text-blue-500 peer-focus:top-[-12px] peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal duration-150">
-                    Insira seu email
-                </label>
-            </div>
+        <div class="inputBox relative">
+            <input id="email" type="email" placeholder="Insira seu email" class="md:w-80 peer block placeholder-transparent text-lg p-3 w-full border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
+            <label for="email" class="absolute px-1 bg-white text-gray-400 font-semibold text-sm top-[-12px] left-3 cursor-text peer-focus:text-sm peer-focus:font-semibold peer-focus:bg-white peer-focus:text-blue-500 peer-focus:top-[-12px] peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal duration-150">
+                Insira seu email
+            </label>
+        </div>
 
-            <div class="inputBox relative">
-                <input id="password" type="password" placeholder="Insira sua senha" class="peer placeholder-transparent text-lg p-3 w-80 border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
-                <label for="password" class="absolute px-1 bg-white text-gray-400 font-semibold text-sm top-[-12px] left-3 cursor-text peer-focus:text-sm peer-focus:font-semibold peer-focus:bg-white peer-focus:text-blue-500 peer-focus:top-[-12px] peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal duration-150">
-                    Insira sua senha
-                </label>
-            </div>
-
-            <div>
-                <input id="checkbox" type="checkbox">
-                <label for="checkbox">Lembrar minha senha.</label>
-            </div>
+        <div class="inputBox relative">
+            <input id="password" type="password" placeholder="Insira sua senha" class="md:w-80 peer block placeholder-transparent text-lg p-3 w-full border-[1px] border-gray-400 rounded-xl outline-none focus:ring-2 focus:ring-blue-300">
+            <label for="password" class="absolute px-1 bg-white text-gray-400 font-semibold text-sm top-[-12px] left-3 cursor-text peer-focus:text-sm peer-focus:font-semibold peer-focus:bg-white peer-focus:text-blue-500 peer-focus:top-[-12px] peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg peer-placeholder-shown:font-normal duration-150">
+                Insira sua senha
+            </label>
+            <span class="flex justify-between mt-2">
+                <div>
+                    <input id="checkbox" type="checkbox">
+                    <label for="checkbox" class="text-sm">Lembrar minha senha.</label>
+                </div>
+                <a href="#" class="text-blue-500 text-sm hover:text-blue-600">Esqueceu sua senha?</a>
+            </span>
+        </div>
         
-        <button class="px-4 py-2 text-white font-semibold bg-blue-500 rounded-md hover:bg-blue-600">CADASTRAR-SE</button>
+        <button class="py-3 w-full text-white text-lg font-semibold bg-blue-500 rounded-md hover:bg-blue-600">LOGIN</button>
+
+        <div class="flex justify-center items-center space-x-2">
+            <span class="h-px w-16 bg-gray-400"></span>
+            <span class="text-base text-gray-400">ou</span>
+            <span class="h-px w-16 bg-gray-400"></span>
+        </div>
+
+        <div class="md:flex-row flex justify-center flex-col gap-4">
+            <a href="#" class="flex px-4 py-2 border-[1px] border-gray-300 rounded-md gap-3 hover:border-blue-500 duration-200">
+                <img class="object-contain w-4" src="../../assets/images/google-logo.png">
+                Google
+            </a>
+
+            <a href="#" class="flex px-4 py-2 border-[1px] border-gray-300 rounded-md gap-3 hover:border-blue-500 duration-200">
+                <img class="object-contain w-4" src="../../assets/images/github-logo.png">
+                GitHub
+            </a>
+        </div>
     </form>
 
-    <script></script>
 </body>
 </html>
