@@ -15,10 +15,44 @@
 <body class="bg-gray-300">
 
     <div class="flex">
-        <aside id="sidebar" class="bg-white w-16 h-screen fixed duration-300">
-            <span id="icon" class="flex justify-center p-4">
-                <i class="ri-menu-line text-3xl"></i>
-            </span>
+        <aside id="sidebar" class="bg-white w-16 h-screen fixed overflow-hidden duration-300">
+            <a href="#" id="icon" class="flex justify-center items-center p-4">
+                <i class="ri-menu-line text-2xl"></i>
+            </a>
+
+            <div class="aside-links flex flex-col justify-between" style="height: calc(100% - 64px);">
+                <div class="top">
+                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-home-5-line text-2xl pl-1"></i>
+                        <span class="text-lg font-medium">
+                            Home
+                        </span>
+                    </a>
+    
+                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-notification-2-line text-2xl pl-1"></i>
+                        <span class="text-lg font-medium">
+                            Notification
+                        </span>
+                    </a>
+    
+                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-message-line text-2xl pl-1"></i>
+                        <span class="text-lg font-medium">
+                            Message
+                        </span>
+                    </a>
+                </div>
+    
+                <div class="bottom">
+                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-settings-3-line text-2xl pl-1"></i>
+                        <span class="text-lg font-medium">
+                            Settings
+                        </span>
+                    </a>
+                </div>
+            </div>
         </aside>
       
         <div id="content" class="flex-1 ml-16 translate-x-0 duration-300">
