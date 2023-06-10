@@ -15,30 +15,39 @@
 <body class="bg-gray-300">
 
     <div class="flex">
-        <aside class="bg-white w-16 h-screen fixed transition-transform duration-300 ease-in-out">
-            <i id="icon" class="ri-menu-line text-4xl"></i>
+        <aside id="sidebar" class="bg-white w-16 h-screen fixed duration-300">
+            <span id="icon" class="flex justify-center p-4">
+                <i class="ri-menu-line text-3xl"></i>
+            </span>
         </aside>
       
-        <div id="content" class="flex-1 ml-16 transition-transform translate-x-0 duration-300 ease-in-out"">
-          <nav class="bg-gray-400 h-20">
-            
-          </nav>
+        <div id="content" class="flex-1 ml-16 translate-x-0 duration-300">
+            <nav class="flex justify-between items-center px-8 bg-gray-400 h-20">
+                <div class="logo">
+                    <h1 class="text-4xl">LOGO</h1>
+                </div>
 
-          <div class="text-8xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ipsum. Tempora, dignissimos numquam sequi corporis distinctio consequatur suscipit? Obcaecati maiores praesentium debitis vero dolor facilis commodi impedit? Et sunt ad ut quaerat similique obcaecati dolorem expedita saepe quas maxime aliquam corrupti voluptatem neque optio asperiores amet aspernatur, necessitatibus odit commodi!</div>
+                <div class="navlinks">
+                    <a href="#">item</a>
+                </div>
+            </nav>
+
+            <main class="text-8xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ipsum. Tempora, dignissimos numquam sequi corporis distinctio consequatur suscipit? Obcaecati maiores praesentium debitis vero dolor facilis commodi impedit? Et sunt ad ut quaerat similique obcaecati dolorem expedita saepe quas maxime aliquam corrupti voluptatem neque optio asperiores amet aspernatur, necessitatibus odit commodi!
+            </main>
         </div>
     </div>      
     
     <script>
+        let sidebar = document.getElementById('sidebar');
         let content = document.getElementById('content');
 
         document.getElementById('icon').addEventListener('click', function() {
-            if (content.classList.contains('translate-x-0')) {
-                content.classList.remove('translate-x-0');
-                content.classList.add('translate-x-32');
-            } else {
-                content.classList.remove('translate-x-32');
-                content.classList.add('translate-x-0');
-            }
+            content.classList.toggle('translate-x-0');
+            content.classList.toggle('translate-x-32');
+
+            sidebar.classList.toggle('w-16');
+            sidebar.classList.toggle('w-48');
         });
     </script>
 </body>
