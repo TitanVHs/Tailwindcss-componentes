@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../dist/output.css">
+
+    <title>Accordion</title>
+</head>
+<body class="bg-gray-300">
+
+    <div class="accordion max-w-2xl mx-auto rounded-md">
+        <div onclick="openAccordion()" class="accordionTitle bg-white p-3 flex justify-between items-center cursor-pointer rounded-t-md border-[1px] border-gray-300 duration-200">
+            <span class="text-lg font-mulish">Accordion</span>
+            <i class="accordionIcon ri-arrow-down-s-line text-2xl text-blue-500 duration-200"></i>
+        </div>
+
+        <div class="accordionContent bg-white overflow-hidden h-0 text-lg w-inherit rounded-b-md border-[1px] border-t-0 border-gray-300 duration-200">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, fuga!
+        </div>
+    </div>
+    
+    <script>
+        function openAccordion() {
+            const accordionContent = document.querySelector('.accordionContent');
+            const accordionIcon = document.querySelector('.accordionIcon');
+            const accordionTitle = document.querySelector('.accordionTitle');
+
+            accordionContent.classList.toggle('h-0');
+            accordionContent.classList.toggle('h-full');
+
+            accordionIcon.classList.toggle('rotate-180');
+            accordionIcon.classList.toggle('rotate-0');
+
+            accordionTitle.classList.toggle('bg-white');
+            accordionTitle.classList.toggle('bg-blue-200');
+        };
+    </script>
+</body>
+</html>
