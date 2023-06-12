@@ -15,39 +15,39 @@
 <body class="bg-gray-300">
 
     <div class="flex">
-        <aside id="sidebar" class="bg-white w-16 h-screen fixed overflow-hidden duration-300">
-            <a href="#" id="icon" class="flex justify-center items-center p-4">
+        <aside id="sidebar" class="bg-white w-16 h-screen fixed overflow-hidden z-50 duration-300">
+            <span onclick="activeMenu()" class="flex justify-center items-center p-4 cursor-pointer">
                 <i class="ri-menu-line text-2xl"></i>
-            </a>
+            </span>
 
-            <div class="aside-links flex flex-col justify-between" style="height: calc(100% - 64px);">
+            <div class="asideLinks font-mulish flex flex-col justify-between" style="height: calc(100% - 64px);">
                 <div class="top">
-                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
-                        <i class="ri-home-5-line text-2xl pl-1"></i>
-                        <span class="text-lg font-medium">
+                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-home-5-line text-xl pl-[5px]"></i>
+                        <span class="text-lg ml-10 duration-200">
                             Home
                         </span>
                     </a>
     
-                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
-                        <i class="ri-notification-2-line text-2xl pl-1"></i>
-                        <span class="text-lg font-medium">
+                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-notification-2-line text-xl pl-[5px]"></i>
+                        <span class="text-lg ml-10 duration-200">
                             Notification
                         </span>
                     </a>
     
-                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
-                        <i class="ri-message-line text-2xl pl-1"></i>
-                        <span class="text-lg font-medium">
+                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-message-line text-xl pl-[5px]"></i>
+                        <span class="text-lg ml-10 duration-200">
                             Message
                         </span>
                     </a>
                 </div>
     
                 <div class="bottom">
-                    <a href="#" id="icon" class="flex items-center gap-5 m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
-                        <i class="ri-settings-3-line text-2xl pl-1"></i>
-                        <span class="text-lg font-medium">
+                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
+                        <i class="ri-settings-3-line text-xl pl-[5px]"></i>
+                        <span class="text-lg ml-10 duration-200">
                             Settings
                         </span>
                     </a>
@@ -73,16 +73,24 @@
     </div>      
     
     <script>
-        let sidebar = document.getElementById('sidebar');
-        let content = document.getElementById('content');
+        function activeMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+            const navLinks = document.querySelectorAll('.navLink');
 
-        document.getElementById('icon').addEventListener('click', function() {
             content.classList.toggle('translate-x-0');
             content.classList.toggle('translate-x-32');
 
             sidebar.classList.toggle('w-16');
             sidebar.classList.toggle('w-48');
-        });
+
+            navLinks.forEach(navLink => {
+                const span = navLink.querySelector('span');
+
+                span.classList.toggle('ml-10');
+                span.classList.toggle('ml-5');
+            });
+        };
     </script>
 </body>
 </html>
