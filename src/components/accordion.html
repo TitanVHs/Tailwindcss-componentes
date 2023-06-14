@@ -11,33 +11,36 @@
 
     <title>Accordion</title>
 </head>
-<body class="bg-gray-300">
+<body class="bg-gray-300 font-mulish">
 
-    <div class="accordion max-w-2xl mx-auto rounded-md">
-        <div onclick="openAccordion()" class="accordionTitle bg-white p-3 flex justify-between items-center cursor-pointer rounded-t-md border-[1px] border-gray-300 duration-200">
-            <span class="text-lg font-mulish">Accordion</span>
-            <i class="accordionIcon ri-arrow-down-s-line text-2xl text-blue-500 duration-200"></i>
+    <div class="py-16 h-screen">
+
+        <div class="max-w-2xl mx-auto space-y-8">
+            <div class="accordion bg-white border-gray-300 border-[1px] rounded-md shadow-lg">
+                <div onclick="openAccordion()" class="accordionHeader p-3 flex justify-between items-center cursor-pointer duration-200">
+                    <span class="text-lg font-medium">Accordion</span>
+                    <i class="accordionIcon ri-arrow-down-s-line text-blue-500 text-2xl duration-100 rotate-0"></i>
+                </div>
+        
+                <div class="accordionContent border-gray-300 text-md p-3 overflow-hidden border-t-[1px] hidden">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, molestias, perspiciatis nobis inventore
+                     eveniet eius aliquam ut saepe provident natus possimus tenetur ipsa!
+                </div>
+            </div>
         </div>
 
-        <div class="accordionContent bg-white overflow-hidden h-0 text-lg w-inherit rounded-b-md border-[1px] border-t-0 border-gray-300 duration-200">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, fuga!
-        </div>
     </div>
     
     <script>
         function openAccordion() {
             const accordionContent = document.querySelector('.accordionContent');
             const accordionIcon = document.querySelector('.accordionIcon');
-            const accordionTitle = document.querySelector('.accordionTitle');
+            const accordionHeader = document.querySelector('.accordionTitle');
 
-            accordionContent.classList.toggle('h-0');
-            accordionContent.classList.toggle('h-full');
+            accordionContent.classList.toggle('block');
+            accordionContent.classList.toggle('hidden');
 
             accordionIcon.classList.toggle('rotate-180');
-            accordionIcon.classList.toggle('rotate-0');
-
-            accordionTitle.classList.toggle('bg-white');
-            accordionTitle.classList.toggle('bg-blue-200');
         };
     </script>
 </body>
