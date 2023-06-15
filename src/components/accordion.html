@@ -11,37 +11,73 @@
 
     <title>Accordion</title>
 </head>
-<body class="bg-gray-300 font-mulish">
+<body class="bg-gray-300 py-16">
 
-    <div class="py-16 h-screen">
-
-        <div class="max-w-2xl mx-auto space-y-8">
-            <div class="accordion bg-white border-gray-300 border-[1px] rounded-md shadow-lg">
-                <div onclick="openAccordion()" class="accordionHeader p-3 flex justify-between items-center cursor-pointer duration-200">
-                    <span class="text-lg font-medium">Accordion</span>
-                    <i class="accordionIcon ri-arrow-down-s-line text-blue-500 text-2xl duration-100 rotate-0"></i>
-                </div>
-        
-                <div class="accordionContent border-gray-300 text-md p-3 overflow-hidden border-t-[1px] hidden">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, molestias, perspiciatis nobis inventore
-                     eveniet eius aliquam ut saepe provident natus possimus tenetur ipsa!
-                </div>
+    <div class="max-w-2xl mx-auto space-y-8">
+        <div class="accordion bg-white border-gray-300 border-[1px] rounded-md shadow-lg">
+            <div class="accordionHeader p-4 flex justify-between items-center cursor-pointer duration-200">
+                <span class="text-lg font-semibold">Accordion</span>
+                <i class="accordionIcon ri-arrow-down-s-line text-blue-500 text-2xl duration-100 rotate-0"></i>
+            </div>
+    
+            <div class="accordionContent border-gray-300 text-md p-4 overflow-hidden border-t-[1px] hidden">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, molestias, perspiciatis nobis inventore
+                    eveniet eius aliquam ut saepe provident natus possimus tenetur ipsa!
             </div>
         </div>
 
+        <div class="accordion bg-white border-gray-300 border-[1px] rounded-md shadow-lg">
+            <div class="accordionHeader p-4 flex justify-between items-center cursor-pointer duration-200">
+                <span class="text-lg font-semibold">Accordion</span>
+                <i class="accordionIcon ri-arrow-down-s-line text-blue-500 text-2xl duration-100 rotate-0"></i>
+            </div>
+    
+            <div class="accordionContent border-gray-300 text-md p-4 overflow-hidden border-t-[1px] hidden">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, molestias, perspiciatis nobis inventore
+                    eveniet eius aliquam ut saepe provident natus possimus tenetur ipsa!
+            </div>
+        </div>
+
+        <div class="accordion bg-white border-gray-300 border-[1px] rounded-md shadow-lg">
+            <div class="accordionHeader p-4 flex justify-between items-center cursor-pointer duration-200">
+                <span class="text-lg font-semibold">Accordion</span>
+                <i class="accordionIcon ri-arrow-down-s-line text-blue-500 text-2xl duration-100 rotate-0"></i>
+            </div>
+    
+            <div class="accordionContent border-gray-300 text-md p-4 overflow-hidden border-t-[1px] hidden">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, molestias, perspiciatis nobis inventore
+                    eveniet eius aliquam ut saepe provident natus possimus tenetur ipsa!
+            </div>
+        </div>
+        
+        <div class="accordion bg-white border-gray-300 border-[1px] rounded-md shadow-lg">
+            <div class="accordionHeader p-4 flex justify-between items-center cursor-pointer duration-200">
+                <span class="text-lg font-semibold">Accordion</span>
+                <i class="accordionIcon ri-arrow-down-s-line text-blue-500 text-2xl duration-100 rotate-0"></i>
+            </div>
+    
+            <div class="accordionContent border-gray-300 text-md p-4 overflow-hidden border-t-[1px] hidden">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, molestias, perspiciatis nobis inventore
+                    eveniet eius aliquam ut saepe provident natus possimus tenetur ipsa!
+            </div>
+        </div>
     </div>
     
-    <script>
-        function openAccordion() {
-            const accordionContent = document.querySelector('.accordionContent');
-            const accordionIcon = document.querySelector('.accordionIcon');
-            const accordionHeader = document.querySelector('.accordionTitle');
+    <script>    
+        const accordions = document.querySelectorAll('.accordion');
 
-            accordionContent.classList.toggle('block');
-            accordionContent.classList.toggle('hidden');
+        accordions.forEach(accordion => {
+            const header = accordion.querySelector('.accordionHeader');
+            const content = accordion.querySelector('.accordionContent');
 
-            accordionIcon.classList.toggle('rotate-180');
-        };
+        header.addEventListener('click', () => {
+            const icon = header.querySelector('.accordionIcon');
+
+            content.classList.toggle('hidden');
+
+            icon.classList.toggle('rotate-180');
+            });
+        });
     </script>
 </body>
 </html>
