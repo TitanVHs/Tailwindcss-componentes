@@ -15,30 +15,34 @@
 <body class="bg-gray-300">
 
     <div class="flex">
-        <aside id="sidebar" class="bg-white w-16 h-screen fixed overflow-hidden z-50 duration-300">
-            <span onclick="activeMenu()" class="flex justify-center items-center p-4 cursor-pointer">
+        <aside id="sidebar" class="md:w-16 md:translate-x-0 md:screen bg-white h-full translate-x-[-100%] fixed overflow-hidden z-50 duration-300">
+            <span onclick="activeMenu()" class="md:flex justify-center items-center p-4 cursor-pointer hidden">
                 <i class="ri-menu-line text-2xl"></i>
             </span>
 
-            <div class="asideLinks font-mulish flex flex-col justify-between" style="height: calc(100% - 64px);">
+            <span class="md:hidden justify-center items-center p-4 cursor-pointer block">
+                <i class="ri-close-line text-2xl"></i>
+            </span>
+
+            <div class="asideLinks flex flex-col justify-between" style="height: calc(100% - 64px);">
                 <div class="top">
                     <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
                         <i class="ri-home-5-line text-xl pl-[5px]"></i>
-                        <span class="text-lg ml-10 duration-200">
+                        <span class="md:ml-10 text-lg ml-5 duration-200">
                             Home
                         </span>
                     </a>
     
                     <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
                         <i class="ri-notification-2-line text-xl pl-[5px]"></i>
-                        <span class="text-lg ml-10 duration-200">
+                        <span class="md:ml-10 text-lg ml-5 duration-200">
                             Notification
                         </span>
                     </a>
     
                     <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
                         <i class="ri-message-line text-xl pl-[5px]"></i>
-                        <span class="text-lg ml-10 duration-200">
+                        <span class="md:ml-10 text-lg ml-5 duration-200">
                             Message
                         </span>
                     </a>
@@ -47,7 +51,7 @@
                 <div class="bottom">
                     <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200 hover:text-blue-500">
                         <i class="ri-settings-3-line text-xl pl-[5px]"></i>
-                        <span class="text-lg ml-10 duration-200">
+                        <span class="md:ml-10 text-lg ml-5 duration-200">
                             Settings
                         </span>
                     </a>
@@ -55,8 +59,10 @@
             </div>
         </aside>
       
-        <div id="content" class="flex-1 ml-16 translate-x-0 duration-300">
+        <div id="content" class="md:ml-16 flex-1 translate-x-0 duration-300">
             <nav class="flex justify-between items-center px-8 bg-gray-400 h-20">
+                <i onclick="activeMenuMobile()" class="ri-menu-line md:hidden block text-2xl"></i>
+
                 <div class="logo">
                     <h1 class="text-4xl">LOGO</h1>
                 </div>
@@ -66,30 +72,36 @@
                 </div>
             </nav>
 
-            <main class="text-8xl">
+            <main class="md:block hidden text-8xl">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ipsum. Tempora, dignissimos numquam sequi corporis distinctio consequatur suscipit? Obcaecati maiores praesentium debitis vero dolor facilis commodi impedit? Et sunt ad ut quaerat similique obcaecati dolorem expedita saepe quas maxime aliquam corrupti voluptatem neque optio asperiores amet aspernatur, necessitatibus odit commodi!
             </main>
         </div>
     </div>      
     
     <script>
+        let sidebar = document.getElementById('sidebar');
+
         function activeMenu() {
-            const sidebar = document.getElementById('sidebar');
             const content = document.getElementById('content');
             const navLinks = document.querySelectorAll('.navLink');
 
             content.classList.toggle('translate-x-0');
             content.classList.toggle('translate-x-32');
 
-            sidebar.classList.toggle('w-16');
-            sidebar.classList.toggle('w-48');
+            sidebar.classList.toggle('md:w-16');
+            sidebar.classList.toggle('md:w-48');
 
             navLinks.forEach(navLink => {
                 const span = navLink.querySelector('span');
 
-                span.classList.toggle('ml-10');
-                span.classList.toggle('ml-5');
+                span.classList.toggle('md:ml-10');
+                span.classList.toggle('md:ml-5');
             });
+        };
+
+        function activeMenuMobile() {
+            sidebar.classList.toggle('translate-x-[-100%]');
+            sidebar.classList.toggle('translate-x-0');
         };
     </script>
 </body>
