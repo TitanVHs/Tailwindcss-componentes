@@ -15,9 +15,13 @@
 <body class="bg-gray-300">
 
     <div class="flex">
-        <aside id="sidebar" class="md:w-16 md:translate-x-0 md:screen bg-white h-full w-48 translate-x-[-100%] fixed overflow-hidden z-50 duration-300">
+        <aside id="sidebar" class="md:w-16 md:translate-x-0 md:screen bg-white h-full w-3/4 translate-x-[-100%] fixed overflow-hidden z-50 duration-300">
             <span onclick="activeMenu()" class="md:flex justify-center items-center p-4 cursor-pointer hidden">
                 <i class="ri-menu-line text-2xl"></i>
+            </span>
+
+            <span onclick="closeMenuMobile()" class="md:hidden justify-center items-center p-4 cursor-pointer block">
+                <i class="ri-close-line text-2xl"></i>
             </span>
             
             <div class="asideLinks flex flex-col justify-between" style="height: calc(100% - 64px);">
@@ -57,7 +61,7 @@
       
         <div id="content" class="md:ml-16 flex-1 translate-x-0 duration-300">
             <nav class="flex justify-between items-center px-8 bg-gray-400 h-20">
-                <i class="ri-menu-line md:hidden block text-2xl"></i>
+                <i onclick="activeMenuMobile()" class="ri-menu-line md:hidden block text-2xl"></i>
 
                 <div class="logo">
                     <h1 class="text-4xl">LOGO</h1>
@@ -97,6 +101,15 @@
                 span.classList.toggle('md:ml-10');
                 span.classList.toggle('md:ml-5');
             });
+        };
+        function activeMenuMobile() {
+            sidebar.classList.remove('translate-x-[-100%]');
+            sidebar.classList.add('translate-x-0');
+        };
+
+        function closeMenuMobile() {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('translate-x-[-100%]');
         };
     </script>
 </body>
