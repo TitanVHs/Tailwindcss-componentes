@@ -9,108 +9,95 @@
     
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../../dist/output.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
 
     <title>Sidebar menu</title>
 </head>
-<body class="bg-gray-300">
+<body class="bg-gray-300" style="font-family: 'Archivo';">
 
     <div class="flex">
-        <aside id="sidebar" class="md:w-16 md:translate-x-0 md:screen bg-white h-full w-3/4 translate-x-[-100%] fixed overflow-hidden z-50 duration-300">
-            <span onclick="activeMenu()" class="md:flex justify-center items-center p-4 cursor-pointer hidden">
-                <i class="ri-menu-line text-2xl"></i>
-            </span>
+        <aside id="sidebar" class="md:w-16 md:translate-x-0 md:overflow-hidden bg-white w-1/2 h-screen translate-x-[-100%] fixed left-0 flex flex-col justify-between duration-200 z-50">
+            <div class="top">
+                <div id="openMenu" class="md:flex md:p-4 md:justify-center md:cursor-pointer hidden">
+                    <i class="ri-menu-line text-2xl"></i>
+                </div>
 
-            <span onclick="closeMenuMobile()" class="md:hidden justify-center items-center p-4 cursor-pointer block">
-                <i class="ri-close-line text-2xl"></i>
-            </span>
-            
-            <div class="asideLinks flex flex-col justify-between" style="height: calc(100% - 64px);">
-                <div class="top">
-                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200">
-                        <i class="ri-home-5-line text-xl pl-[5px]"></i>
-                        <span class="md:ml-10 text-lg ml-5 duration-200">
-                            Home
-                        </span>
-                    </a>
-    
-                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200">
-                        <i class="ri-notification-2-line text-xl pl-[5px]"></i>
-                        <span class="md:ml-10 text-lg ml-5 duration-200">
-                            Notification
-                        </span>
-                    </a>
-    
-                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-200">
-                        <i class="ri-message-line text-xl pl-[5px]"></i>
-                        <span class="md:ml-10 text-lg ml-5 duration-200">
-                            Message
-                        </span>
-                    </a>
+                <div id="mobileCloseMenu" class="md:hidden px-[18px] pt-4 block">
+                    <i class="ri-close-line text-2xl"></i>
                 </div>
-    
-                <div class="bottom">
-                    <a href="#" class="navLink flex items-center m-2 p-2 rounded-lg hover:bg-gray-20">
-                        <i class="ri-settings-3-line text-xl pl-[5px]"></i>
-                        <span class="md:ml-10 text-lg ml-5 duration-200">
-                            Settings
-                        </span>
-                    </a>
-                </div>
+
+                <a href="#" class="sidebarLink md:gap-8 p-2 m-2 flex items-center gap-6 rounded-md duration-150 hover:bg-gray-200 hover:text-blue-500">
+                    <i class="ri-home-line md:ml-1 text-2xl"></i>
+                    <span class="text-lg">Home</span>
+                </a>
+
+                <a href="#" class="sidebarLink md:gap-8 p-2 m-2 flex items-center gap-6 rounded-md duration-150 hover:bg-gray-200 hover:text-blue-500">
+                    <i class="ri-task-line md:ml-1 text-2xl"></i>
+                    <span class="text-lg">Tasks</span>
+                </a>
+
+                <a href="#" class="sidebarLink md:gap-8 p-2 m-2 flex items-center gap-6 rounded-md duration-150 hover:bg-gray-200 hover:text-blue-500">
+                    <i class="ri-chat-1-line md:ml-1 text-2xl"></i>
+                    <span class="text-lg">Messages</span>
+                </a>
+            </div>
+
+            <div class="bottom">
+                <a href="#" class="sidebarLink md:gap-8 p-2 m-2 flex items-center gap-6 rounded-md duration-150 hover:bg-gray-200 hover:text-blue-500">
+                    <i class="ri-settings-line md:ml-1 text-2xl"></i>
+                    <span class="text-lg">Settings</span>
+                </a>
+
+                <a href="#" class="sidebarLink md:gap-8 p-2 m-2 flex items-center gap-6 rounded-md duration-150 hover:bg-gray-200 hover:text-blue-500">
+                    <i class="ri-logout-box-line md:ml-1 text-2xl"></i>
+                    <span class="text-lg">Logout</span>
+                </a>
             </div>
         </aside>
-      
-        <div id="content" class="md:ml-16 flex-1 translate-x-0 duration-300">
-            <nav class="flex justify-between items-center px-8 bg-gray-400 h-20">
-                <i onclick="activeMenuMobile()" class="ri-menu-line md:hidden block text-2xl"></i>
 
-                <div class="logo">
-                    <h1 class="text-4xl">LOGO</h1>
-                </div>
+        <main class="md:ml-16 flex-1">
+            <nav class="md:static bg-gray-400 h-20 px-8 flex justify-between items-center fixed top-0 w-full z-10">
+                <i id="mobileOpenMenu" class="ri-menu-line md:hidden block text-2xl"></i>
 
-                <div class="flex items-center gap-3 cursor-pointer">
-                    <div class="bg-gray-300 w-8 h-8 rounded-full"></div>
-                    <div class="md:flex hidden">
+                <h1 class="text-3xl">LOGO</h1>
+
+                <div class="md:flex md:gap-2 cursor-pointer">
+                    <div class="bg-gray-300 h-8 w-8 rounded-full"></div>
+                    <span class=":md:flex md:items-center md:block hidden">
                         Profile
-                        <i class="ri-arrow-down-s-fill ml-2"></i>
-                    </div>
+                        <i class="ri-arrow-down-s-fill"></i>
+                    </span>
                 </div>
             </nav>
 
-            <main class="md:block hidden text-8xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ipsum. Tempora, dignissimos numquam sequi corporis distinctio consequatur suscipit? Obcaecati maiores praesentium debitis vero dolor facilis commodi impedit? Et sunt ad ut quaerat similique obcaecati dolorem expedita saepe quas maxime aliquam corrupti voluptatem neque optio asperiores amet aspernatur, necessitatibus odit commodi!
-            </main>
-        </div>
-    </div>      
+            <span class="text-4xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ut assumenda eos doloribus fugiat adipisci consequatur, delectus eum eveniet accusantium repellat error atque, facere magni fugit in dolores minima blanditiis ullam et repudiandae recusandae. Aliquid ad repellendus magni laudantium at facere iste repellat in architecto. Vel culpa velit qui vitae accusantium, id doloremque? Quod totam explicabo pariatur cupiditate quis inventore quas eaque. Ad tenetur ipsa rem unde reprehenderit molestiae veniam!</span>
+        </main>
+    </div>
     
     <script>
         let sidebar = document.getElementById('sidebar');
-        let content = document.getElementById('content');
 
-        function activeMenu() {
-            const navLinks = document.querySelectorAll('.navLink');
-
-            content.classList.toggle('translate-x-0');
-            content.classList.toggle('translate-x-32');
+        document.getElementById('openMenu').addEventListener('click', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebarLink');
 
             sidebar.classList.toggle('md:w-16');
             sidebar.classList.toggle('md:w-48');
 
-            navLinks.forEach(navLink => {
-                const span = navLink.querySelector('span');
-
-                span.classList.toggle('md:ml-10');
-                span.classList.toggle('md:ml-5');
+            sidebarLinks.forEach(function(link) {
+                link.classList.toggle('md:gap-8');
+                link.classList.toggle('md:gap-5');
             });
-        };
-        function activeMenuMobile() {
+        });
+
+        document.getElementById('mobileOpenMenu').addEventListener('click', function() {
             sidebar.classList.remove('translate-x-[-100%]');
             sidebar.classList.add('translate-x-0');
-        };
+        });
 
-        function closeMenuMobile() {
+        document.getElementById('mobileCloseMenu').addEventListener('click', function() {
             sidebar.classList.remove('translate-x-0');
             sidebar.classList.add('translate-x-[-100%]');
-        };
+        });
     </script>
 </body>
 </html>
